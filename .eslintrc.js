@@ -1,5 +1,4 @@
 module.exports = {
-  // TODO add ordered imports https://github.com/benmosher/eslint-plugin-import
   "env": {
     "browser": true,
     "node": false
