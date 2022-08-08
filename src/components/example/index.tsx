@@ -6,6 +6,7 @@ export interface ExampleProps {
 }
 
 const Example: React.FunctionComponent<ExampleProps> = Props => {
+	console.log('console');
 	return (
 		<div>
 			<p>title: {Props.title}</p>
