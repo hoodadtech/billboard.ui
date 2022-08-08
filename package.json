@@ -14,13 +14,15 @@
       "require": "./dist/lib.umd.cjs"
     }
   },
+  "private": false,
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prettier": "prettier --write --ignore-unknown ."
+    "prettier": "prettier --write --ignore-unknown .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^18.2.0",
