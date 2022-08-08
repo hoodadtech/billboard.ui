@@ -1,0 +1,17 @@
+# Directories
+node_modules/
+.idea/
+.vscode/
+build/
+lib/
+dist/
+coverage/
+report/
+
+# Files
+.DS_STORE
+*.log*
+.env
+.docusaurus
+.cache-loader
+.history

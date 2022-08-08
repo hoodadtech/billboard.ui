@@ -1,0 +1,66 @@
+{
+  "name": "billboard.ui",
+  "version": "1.0.0",
+  "description": "Armani media agency design system",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/lib.umd.cjs",
+  "module": "./dist/lib.js",
+  "exports": {
+    ".": {
+      "import": "./dist/lib.js",
+      "require": "./dist/lib.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "prettier": "prettier --write --ignore-unknown ."
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-docgen": "^5.4.3",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-vite": "^0.2.2",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.0",
+    "babel-loader": "^8.2.5",
+    "eslint": "^8.21.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alirezaaminii/billboard.ui.git"
+  },
+  "keywords": [
+    "UIKit",
+    "design-system"
+  ],
+  "author": "Alireza Amini <aminicss1@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alirezaaminii/billboard.ui/issues"
+  },
+  "homepage": "https://github.com/alirezaaminii/billboard.ui#readme"
+}
