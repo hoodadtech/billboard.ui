@@ -1,6 +1,5 @@
-import Card from './components/card';
-
+import Example from './components/example';
 
 export {
-  Card
+  Example
 };
