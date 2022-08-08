@@ -148,7 +148,7 @@ module.exports = {
 		'@typescript-eslint/ban-ts-comment': 'warn',
 		'@typescript-eslint/no-empty-function': 'warn',
 		'react/jsx-key': 'warn',
-		'no-console': 'warn',
+		'no-console': 'error',
 		'no-else-return': 'warn',
 		'spaced-comment': 'warn',
 		'guard-for-in': 'error',
