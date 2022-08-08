@@ -148,7 +148,31 @@ module.exports = {
 		'@typescript-eslint/ban-ts-comment': 'warn',
 		'@typescript-eslint/no-empty-function': 'warn',
 		'react/jsx-key': 'warn',
-		'no-console': 'error',
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "dir",
+          "timeLog",
+          "assert",
+          "clear",
+          "count",
+          "countReset",
+          "group",
+          "groupEnd",
+          "table",
+          "dirxml",
+          "error",
+          "groupCollapsed",
+          "Console",
+          "profile",
+          "profileEnd",
+          "timeStamp",
+          "context"
+        ]
+      }
+    ],
 		'no-else-return': 'warn',
 		'spaced-comment': 'warn',
 		'guard-for-in': 'error',
