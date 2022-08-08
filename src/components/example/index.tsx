@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export interface ExampleProps {
   title: string;
@@ -6,17 +6,14 @@ export interface ExampleProps {
 }
 
 const Example: React.FunctionComponent<ExampleProps> = (Props) => {
+  console.log('console log');
   return (
     <div>
-      <p>
-        title: {Props.title}
-      </p>
+      <p>title: {Props.title}</p>
       Example
-      <p>
-        description: {Props.description}
-      </p>
+      <p>description: {Props.description}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Example
+export default Example;
