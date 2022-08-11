@@ -2,10 +2,8 @@ import React from 'react';
 import { SizeType } from 'antd/es/config-provider/SizeContext';
 import { ButtonProps } from 'antd';
 import { ButtonStyle } from './index.style';
-import { ArrowIcon } from '../icons/ArrowIcon';
-import loadingIcon from '../../assets/images/loading.svg';
+import { ArrowIcon, LoadingIcon } from '../icons';
 
-// @ts-ignore
 export interface CustomButtonProps extends ButtonProps {
 	text?: string | React.ReactElement;
 	variant:
@@ -36,7 +34,7 @@ export interface CustomButtonProps extends ButtonProps {
 	isMobileIcon?: boolean;
 }
 
-const CustomButton: React.FunctionComponent<CustomButtonProps> = props => {
+const Button: React.FunctionComponent<CustomButtonProps> = props => {
 	return (
 		<ButtonStyle
 			variant={props.variant}
@@ -54,12 +52,12 @@ const CustomButton: React.FunctionComponent<CustomButtonProps> = props => {
 		>
 			{props.icon && !props.loading && (
 				<div className="left-icon">
-					<img {...props.icon} src={props.loading ? loadingIcon : props.icon.src} alt="" />
+					{props.loading ? <LoadingIcon width={24} height={24} /> : <img {...props.icon} src={props.icon.src} alt="" />}
 				</div>
 			)}
 			{props.loading && (
 				<div className="left-icon">
-					<img width={20} height={20} src={loadingIcon} alt="" />
+					<LoadingIcon width={24} height={24} />
 				</div>
 			)}
 			{props.text && <span className="text">{props.text}</span>}
@@ -73,4 +71,4 @@ const CustomButton: React.FunctionComponent<CustomButtonProps> = props => {
 	);
 };
 
-export default CustomButton;
+export default Button;

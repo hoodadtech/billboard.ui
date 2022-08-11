@@ -5,6 +5,7 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import cleaner from 'rollup-plugin-cleaner';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
+import image from 'rollup-plugin-img';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 import url from 'rollup-plugin-url';
@@ -36,6 +37,9 @@ export default {
 			targets: ['./lib'],
 		}),
 		peerDepsExternal(),
+		image({
+			limit: 10000,
+		}),
 		url(),
 		terser(),
 		// resolve(),

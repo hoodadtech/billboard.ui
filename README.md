@@ -2,7 +2,7 @@
 
 ## Installation
 
-` yarn add billboard.ui `
+`yarn add billboard.ui`
 
 ## Usage
 

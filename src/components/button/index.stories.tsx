@@ -2,12 +2,12 @@ import * as React from 'react';
 import { Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
-import CustomButton, { CustomButtonProps } from './index';
-import buttonIcon from '../../assets/images/icons/user-icon.svg';
+import Button, { CustomButtonProps } from './index';
+import ProfileIcon from '../../assets/images/stackalt.svg';
 
 export default {
 	title: 'Components/Button',
-	component: CustomButton,
+	component: Button,
 	argTypes: {
 		onFocus: action('Focused'),
 		variant: {
@@ -37,7 +37,7 @@ export default {
 	decorators: [withDesign],
 };
 
-const Template: Story<CustomButtonProps> = (args: any) => <CustomButton {...args} />;
+const Template: Story<CustomButtonProps> = (args: any) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 
@@ -140,7 +140,7 @@ WithIcon.args = {
 	icon: {
 		width: 16,
 		height: 16,
-		src: buttonIcon,
+		src: ProfileIcon,
 	},
 	loading: false,
 	disabled: false,
@@ -154,7 +154,7 @@ JustIcon.args = {
 	icon: {
 		width: 20,
 		height: 20,
-		src: buttonIcon,
+		src: ProfileIcon,
 	},
 	loading: false,
 	disabled: false,
@@ -169,7 +169,7 @@ WithIconRTL.args = {
 	icon: {
 		width: 16,
 		height: 16,
-		src: buttonIcon,
+		src: ProfileIcon,
 	},
 	direction: 'rtl',
 };
