@@ -91,7 +91,8 @@
 	},
 	"keywords": [
 		"ui-kit",
-		"design-system"
+		"design-system",
+    "react-ui-kit"
 	],
 	"author": "Alireza Amini <aminicss1@gmail.com>",
 	"license": "ISC",
