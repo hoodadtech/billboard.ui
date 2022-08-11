@@ -1,9 +1,0 @@
-# Directories
-node_modules/
-.idea/
-.vscode/
-lib/
-
-# Files
-.DS_STORE
-*.log*
