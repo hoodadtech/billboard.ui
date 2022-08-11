@@ -1,10 +1,16 @@
 {
 	"name": "billboard.ui",
-	"version": "1.0.0",
+	"version": "0.0.2",
 	"description": "Armani media agency design system",
 	"private": false,
 	"main": "lib/index.js",
 	"module": "lib/index.esm.js",
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build-library": "rollup -c",
+    "build": "yarn install --frozen-lockfile && yarn run build-library && yarn run build-storybook"
+  },
 	"prettier": {
 		"arrowParens": "avoid",
 		"tabWidth": 2,
@@ -73,12 +79,6 @@
 	"peerDependencies": {
 		"react": ">=17.0.1",
 		"react-dom": ">=17.0.1"
-	},
-	"scripts": {
-		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook",
-		"build-library": "rollup -c",
-		"build": "npm ci && npm run build-library && npm run build-storybook"
 	},
 	"dependencies": {
 		"classnames": "^2.3.1",
