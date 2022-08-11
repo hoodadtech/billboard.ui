@@ -1,0 +1,20 @@
+
+# Directories
+node_modules/
+.idea/
+.vscode/
+build/
+lib/
+dist/
+coverage/
+report/
+storybook-static
+
+# Files
+.DS_STORE
+.eslintcache
+*.log*
+.env
+.docusaurus
+.cache-loader
+.history
