@@ -137,11 +137,7 @@ WithIcon.args = {
 	text: 'Default',
 	size: 'middle',
 	variant: 'primary',
-	icon: {
-		width: 16,
-		height: 16,
-		src: ProfileIcon,
-	},
+	icon: <ProfileIcon />,
 	loading: false,
 	disabled: false,
 };
@@ -151,11 +147,7 @@ export const JustIcon = Template.bind({});
 JustIcon.args = {
 	text: '',
 	variant: 'secondary',
-	icon: {
-		width: 20,
-		height: 20,
-		src: ProfileIcon,
-	},
+	icon: <ProfileIcon />,
 	loading: false,
 	disabled: false,
 };
@@ -166,10 +158,6 @@ WithIconRTL.args = {
 	text: 'Default',
 	size: 'middle',
 	variant: 'primary',
-	icon: {
-		width: 16,
-		height: 16,
-		src: ProfileIcon,
-	},
+	icon: <ProfileIcon />,
 	direction: 'rtl',
 };
