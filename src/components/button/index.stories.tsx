@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 import Button, { CustomButtonProps } from './index';
-import ProfileIcon from '../../assets/images/stackalt.svg';
+import { ProfileIcon } from '../icons';
 
 export default {
 	title: 'Components/Button',
