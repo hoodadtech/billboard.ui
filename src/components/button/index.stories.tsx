@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 import Button, { CustomButtonProps } from './index';
-import { ProfileIcon } from '../icons';
+import ProfileIcon from '../../assets/images/stackalt.svg';
 
 export default {
 	title: 'Components/Button',
@@ -137,7 +137,11 @@ WithIcon.args = {
 	text: 'Default',
 	size: 'middle',
 	variant: 'primary',
-	icon: <ProfileIcon />,
+	icon: {
+		width: 16,
+		height: 16,
+		src: ProfileIcon,
+	},
 	loading: false,
 	disabled: false,
 };
@@ -147,7 +151,11 @@ export const JustIcon = Template.bind({});
 JustIcon.args = {
 	text: '',
 	variant: 'secondary',
-	icon: <ProfileIcon />,
+	icon: {
+		width: 20,
+		height: 20,
+		src: ProfileIcon,
+	},
 	loading: false,
 	disabled: false,
 };
@@ -158,6 +166,10 @@ WithIconRTL.args = {
 	text: 'Default',
 	size: 'middle',
 	variant: 'primary',
-	icon: <ProfileIcon />,
+	icon: {
+		width: 16,
+		height: 16,
+		src: ProfileIcon,
+	},
 	direction: 'rtl',
 };

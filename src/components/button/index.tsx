@@ -20,9 +20,11 @@ export interface CustomButtonProps extends ButtonProps {
 		| 'leased'
 		| undefined;
 	size?: SizeType;
-
-	// TODO:: fix icon type
-	icon?: any;
+	icon?: {
+		width: number;
+		height: number;
+		src: string;
+	};
 	isDropDown?: boolean;
 	numFilter?: number;
 	type?: any;
@@ -33,8 +35,6 @@ export interface CustomButtonProps extends ButtonProps {
 }
 
 const Button: React.FunctionComponent<CustomButtonProps> = props => {
-	const CustomIcon = props.icon;
-
 	return (
 		<ButtonStyle
 			variant={props.variant}
@@ -50,8 +50,10 @@ const Button: React.FunctionComponent<CustomButtonProps> = props => {
 			isDesktopText={props.isDesktopText}
 			isMobileIcon={props.isMobileIcon}
 		>
-			{CustomIcon && !props.loading && (
-				<div className="left-icon">{props.loading ? <LoadingIcon width={24} height={24} /> : <CustomIcon />}</div>
+			{props.icon && !props.loading && (
+				<div className="left-icon">
+					{props.loading ? <LoadingIcon width={24} height={24} /> : <img {...props.icon} src={props.icon.src} alt="" />}
+				</div>
 			)}
 			{props.loading && (
 				<div className="left-icon">
