@@ -1,6 +1,6 @@
 {
 	"name": "billboard.ui",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"description": "Armani media agency design system",
 	"private": false,
 	"main": "lib/index.js",
