@@ -1,6 +1,5 @@
 import Styled from 'styled-components';
-import {Theme} from "../../../styles/_theme";
-
+import { Theme } from '../../../styles/_theme';
 
 export const SwitchStyle = Styled.div`
   .ant-switch {

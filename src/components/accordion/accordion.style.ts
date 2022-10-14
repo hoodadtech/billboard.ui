@@ -1,6 +1,6 @@
 import Styled from 'styled-components';
 import { Theme } from '../../styles/_theme';
-import { AccordionProps } from "../accordion/accordion";
+import { AccordionProps } from '../accordion/accordion';
 
 export const AccordionStyle = Styled.div`
     border: 1px solid ${Theme.colors.gray_300};
@@ -102,8 +102,8 @@ export const AccordionStyle = Styled.div`
     }  
   
     ${(props: AccordionProps) => {
-    if (props.isAccordionOpen) {
-      return `
+			if (props.isAccordionOpen) {
+				return `
                 .accordion-header {
                  background-color: ${Theme.colors.gray_100};
                  border-radius: 15px 15px 0 0 ;
@@ -122,6 +122,7 @@ export const AccordionStyle = Styled.div`
                   display: block;
                   transition: all 150ms ease-in-out;
                }
-        `}
-  }}
+        `;
+			}
+		}}
 `;

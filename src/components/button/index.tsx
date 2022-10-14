@@ -1,38 +1,7 @@
 import React from 'react';
-import { SizeType } from 'antd/es/config-provider/SizeContext';
-import { ButtonProps } from 'antd';
 import { ButtonStyle } from './index.style';
 import { ArrowIcon, LoadingIcon } from '../icons';
-
-export interface CustomButtonProps extends ButtonProps {
-	text?: string | React.ReactElement;
-	variant:
-		| 'successBold'
-		| 'primary'
-		| 'secondary'
-		| 'tertiary'
-		| 'textLine'
-		| 'error'
-		| 'transparent'
-		| 'lightBlue'
-		| 'gray'
-		| 'success'
-		| 'leased'
-		| undefined;
-	size?: SizeType;
-	icon?: {
-		width: number;
-		height: number;
-		src: string;
-	};
-	isDropDown?: boolean;
-	numFilter?: number;
-	type?: any;
-	direction?: 'rtl' | 'ltr';
-	fullWidth?: boolean;
-	isDesktopText?: boolean;
-	isMobileIcon?: boolean;
-}
+import { CustomButtonProps } from './types';
 
 const Button: React.FunctionComponent<CustomButtonProps> = props => {
 	return (

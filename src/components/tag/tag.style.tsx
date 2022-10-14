@@ -1,5 +1,5 @@
 import Styled from 'styled-components';
-import { Theme } from 'src/styles/_theme'; 
+import { Theme } from 'src/styles/_theme';
 import { TagProps } from './tag';
 
 export const TagStyle = Styled.div`

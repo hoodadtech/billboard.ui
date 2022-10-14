@@ -7,14 +7,12 @@ import { Label } from '../label/label';
 import { CustomErrorMessage } from '../error-message/error-message';
 
 export const _Input = ({ field, ...rest }: AutoCompleteProps & FieldProps): React.ReactElement => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
-	delete rest?.form
+	delete rest?.form;
 
-	return (
-		<AutoComplete  {...field} {...rest} allowClear={false} />
-	);
-}
+	return <AutoComplete {...field} {...rest} allowClear={false} />;
+};
 
 export const FormikAutoComplete = ({
 	label,

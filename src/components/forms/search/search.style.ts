@@ -1,10 +1,9 @@
 import Styled from 'styled-components';
-import {SizeType} from "antd/es/config-provider/SizeContext";
-import {Theme} from "../../../styles/_theme";
-
+import { SizeType } from 'antd/es/config-provider/SizeContext';
+import { Theme } from '../../../styles/_theme';
 
 interface SearchProps {
-    size?: SizeType
+	size?: SizeType;
 }
 
 export const SearchStyle = Styled.div`
@@ -82,15 +81,15 @@ export const SearchStyle = Styled.div`
     }
     
     ${(props: SearchProps) => {
-    switch (props.size) {
-        case 'small':
-            return `
+			switch (props.size) {
+				case 'small':
+					return `
                     width: 240px;
                 `;
-        default:
-            return ``;
-    }
-}};
+				default:
+					return ``;
+			}
+		}};
       
     @media screen and (max-width: ${Theme.breakPoints.normalPhone}px) {
      height: 44px;

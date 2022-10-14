@@ -1,8 +1,8 @@
 import Styled, { StyledComponent } from 'styled-components';
-import {Dropdown} from 'antd';
-import {Theme} from "../../styles/_theme";
+import { Dropdown } from 'antd';
+import { Theme } from '../../styles/_theme';
 
-export const DropDownStyle:any = Styled(Dropdown)`
+export const DropDownStyle: any = Styled(Dropdown)`
   padding:0;
   width: max-content;
   outline: 0;
@@ -35,4 +35,4 @@ export const ANTDropDownStyles = `
     }
    }
   }
-`
+`;

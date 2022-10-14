@@ -1,10 +1,10 @@
 import Styled from 'styled-components';
-import {SizeType} from "antd/es/config-provider/SizeContext";
+import { SizeType } from 'antd/es/config-provider/SizeContext';
 
-import {Theme} from "../../../styles/_theme";
+import { Theme } from '../../../styles/_theme';
 
 interface AutoCompleteStyleProps {
-    size?: SizeType
+	size?: SizeType;
 }
 
 export const AutoCompleteStyle = Styled.div`
@@ -85,15 +85,15 @@ export const AutoCompleteStyle = Styled.div`
     }
     
     ${(props: AutoCompleteStyleProps) => {
-    switch (props.size) {
-        case 'small':
-            return `
+			switch (props.size) {
+				case 'small':
+					return `
                     width: 240px;
                 `;
-        default:
-            return ``;
-    }
-}};
+				default:
+					return ``;
+			}
+		}};
       
     @media screen and (max-width: ${Theme.breakPoints.normalPhone}px) {
      height: 44px;

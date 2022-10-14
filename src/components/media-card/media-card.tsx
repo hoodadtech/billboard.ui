@@ -24,7 +24,7 @@ export interface MediaCardProps {
 	showButton?: boolean;
 	selected?: boolean;
 	images?: string[];
-	type:string
+	type: string;
 }
 
 export const MediaCard = (props: MediaCardProps): React.ReactElement => {

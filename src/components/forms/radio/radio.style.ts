@@ -1,6 +1,5 @@
 import Styled from 'styled-components';
-import {Theme} from "../../../styles/_theme";
-
+import { Theme } from '../../../styles/_theme';
 
 export const RadioStyle = Styled.div`
   .ant-radio-wrapper:hover .ant-radio-inner, .ant-radio:hover .ant-radio-inner {

@@ -9,14 +9,12 @@ import { CustomErrorMessage } from '../error-message/error-message';
 import { SearchIcon } from '../../icons/SearchIcon';
 
 export const _Input = ({ field, ...rest }: InputProps & FieldProps): React.ReactElement => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
-	delete rest?.form
+	delete rest?.form;
 
-	return (
-		<Input.Search  {...field} {...rest} allowClear />
-	);
-}
+	return <Input.Search {...field} {...rest} allowClear />;
+};
 
 export const FormikSearch = ({
 	label,
@@ -33,7 +31,7 @@ export const FormikSearch = ({
 			as={control}
 			component={_Input}
 			label={label}
-			placeholder='Search ...'
+			placeholder="Search ..."
 			{...rest}
 			prefix={<SearchIcon />}
 			className={`${rest.className || ''} ${errorMessage ? 'error' : ''}`}

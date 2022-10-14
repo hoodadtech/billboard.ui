@@ -1,6 +1,5 @@
 import Styled from 'styled-components';
-import {Theme} from "../../../styles/_theme";
-
+import { Theme } from '../../../styles/_theme';
 
 export const TextareaStyle = Styled.div`
    @media screen and (max-width: ${Theme.breakPoints.smallPhone}px){

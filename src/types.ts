@@ -1,3 +1,1 @@
-import { CustomButtonProps as ButtonProps } from './components/button';
-
-export type { ButtonProps };
+export * from './components/button/types';

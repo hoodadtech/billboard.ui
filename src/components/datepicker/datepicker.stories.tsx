@@ -3,12 +3,14 @@ import * as React from 'react';
 import Datepicker from './datepicker';
 
 export default {
-    title: 'Components/Datepicker',
-    component: Datepicker,
+	title: 'Components/Datepicker',
+	component: Datepicker,
 };
 
 export const _Datepicker = (): React.ReactElement => (
-    <Datepicker onChange={() => {
-        // get date
-    }}/>
+	<Datepicker
+		onChange={() => {
+			// get date
+		}}
+	/>
 );

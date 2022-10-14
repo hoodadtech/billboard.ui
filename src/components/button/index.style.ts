@@ -1,6 +1,6 @@
 import Styled from 'styled-components';
 import { Theme } from '../../styles/_theme';
-import { CustomButtonProps } from './index';
+import { CustomButtonProps } from './types';
 
 export const ButtonStyle = Styled.button`
     display:inline-flex;

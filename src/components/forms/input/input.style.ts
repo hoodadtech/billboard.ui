@@ -1,10 +1,10 @@
 import Styled from 'styled-components';
-import {SizeType} from "antd/es/config-provider/SizeContext";
-import {Theme} from "../../../styles/_theme";
+import { SizeType } from 'antd/es/config-provider/SizeContext';
+import { Theme } from '../../../styles/_theme';
 
 interface InputProps {
-    size?: SizeType;
-    fullWidth?: boolean
+	size?: SizeType;
+	fullWidth?: boolean;
 }
 
 export const InputStyle = Styled.div`
@@ -67,9 +67,9 @@ export const InputStyle = Styled.div`
     }
     
     ${(props: InputProps) => {
-        switch (props.size) {
-        case 'small':
-            return `
+			switch (props.size) {
+				case 'small':
+					return `
                     width: 170px;
                     
                     &.smaller {
@@ -82,20 +82,20 @@ export const InputStyle = Styled.div`
                      width: 145px;
                     }
                 `;
-        case 'large':
-            return `
+				case 'large':
+					return `
                     width: 770px;
                 `;
-        default:
-            return ``;
-    }
-    }};
+				default:
+					return ``;
+			}
+		}};
     
     ${(props: InputProps) => {
-        if (props.fullWidth) {
-            return `width: 100% !important;`
-        }
-    }};
+			if (props.fullWidth) {
+				return `width: 100% !important;`;
+			}
+		}};
       
     @media screen and (max-width: ${Theme.breakPoints.normalPhone}px) {
      height: 44px;

@@ -1,5 +1,5 @@
 import Styled from 'styled-components';
-import {Theme} from "../../styles/_theme";
+import { Theme } from '../../styles/_theme';
 
 export const UploadStyle = Styled.div`
   .ant-upload-list-picture-card-container {

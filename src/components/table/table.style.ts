@@ -1,10 +1,10 @@
 import Styled from 'styled-components';
-import { Theme } from "../../styles/_theme";
+import { Theme } from '../../styles/_theme';
 
 export interface TableWrapperProps {
-  fullPage?: boolean;
-  differenceHeight?: number;
-  loading?: boolean
+	fullPage?: boolean;
+	differenceHeight?: number;
+	loading?: boolean;
 }
 
 export const TableWrapper = Styled.div`
@@ -14,16 +14,16 @@ export const TableWrapper = Styled.div`
     overflow: auto;
     
     ${(props: TableWrapperProps) => {
-    if (props.fullPage) {
-      return `
+			if (props.fullPage) {
+				return `
          @media screen and (min-width: ${Theme.breakPoints.largePhone}px) {
             min-height: calc(100vh - ${props.differenceHeight || 178}px);
             max-height: calc(100vh - ${props.differenceHeight || 178}px);
             overflow-y: auto;
          }
-      `
-    }
-  }}
+      `;
+			}
+		}}
     
   .ant-table-wrapper {
     .ant-table-content {

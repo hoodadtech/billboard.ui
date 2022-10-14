@@ -1,10 +1,9 @@
 import Styled from 'styled-components';
-import {SizeType} from "antd/es/config-provider/SizeContext";
-import {Theme} from "../../../styles/_theme";
-
+import { SizeType } from 'antd/es/config-provider/SizeContext';
+import { Theme } from '../../../styles/_theme';
 
 interface SelectProps {
-    size?: SizeType
+	size?: SizeType;
 }
 
 export const SelectStyle = Styled.div`
@@ -86,15 +85,15 @@ export const SelectStyle = Styled.div`
      }
     
      ${(props: SelectProps) => {
-      switch (props.size) {
-        case 'small':
-            return `
+				switch (props.size) {
+					case 'small':
+						return `
                      width: 170px;
                  `;
-        default:
-            return ``;
-      }
-     }};
+					default:
+						return ``;
+				}
+			}};
       
       @media screen and (max-width: ${Theme.breakPoints.normalPhone}px) {
        height: 44px;

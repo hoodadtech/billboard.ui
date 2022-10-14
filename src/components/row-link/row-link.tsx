@@ -12,13 +12,15 @@ export interface RowLinkProps {
 export const RowLink = (props: RowLinkProps) => {
 	return (
 		<RowLinkStyles>
-				<a className="link common-style"href={`${props.link}`}>
-					<div className='common-style'>
-						{props.numberRow && <div className="number-row">{props.numberRow}</div>}
-						<span className="title">{props.title}</span>
-					</div>
-					<div className="common-style"><ArrowRight/></div>
-				</a>
+			<a className="link common-style" href={`${props.link}`}>
+				<div className="common-style">
+					{props.numberRow && <div className="number-row">{props.numberRow}</div>}
+					<span className="title">{props.title}</span>
+				</div>
+				<div className="common-style">
+					<ArrowRight />
+				</div>
+			</a>
 		</RowLinkStyles>
 	);
 };

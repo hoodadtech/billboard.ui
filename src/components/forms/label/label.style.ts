@@ -1,6 +1,5 @@
 import Styled from 'styled-components';
-import {Theme} from "../../../styles/_theme";
-
+import { Theme } from '../../../styles/_theme';
 
 export const LabelStyle = Styled.div`
    width: 100%;

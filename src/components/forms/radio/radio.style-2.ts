@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Theme} from "../../../styles/_theme";
+import { Theme } from '../../../styles/_theme';
 
 export interface RadioPermProps {
 	variant?: 'primary' | 'secondary' | 'warning' | 'suspended';

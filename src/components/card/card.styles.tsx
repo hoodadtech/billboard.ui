@@ -31,48 +31,48 @@ export const CardStyles = styled.div`
 		align-items: center;
 
 		${(props: Partial<CardProps>) => {
-		switch (props.variant) {
-			case 'primary':
-				return `
+			switch (props.variant) {
+				case 'primary':
+					return `
             background-color:${Theme.colors.primaryColorTransparent};
                 `;
-			case 'success':
-				return `
+				case 'success':
+					return `
             background-color:${Theme.colors.successTransparentColor};
                 `;
-			case 'secondary':
-				return `
+				case 'secondary':
+					return `
             background-color: ${Theme.colors.secondaryColorTransparent};
              `;
-			case 'error':
-				return `
+				case 'error':
+					return `
             background-color: ${Theme.colors.errorTransparentColor};
              `;
-			case 'gray':
-				return `
+				case 'gray':
+					return `
             background-color: rgba(125, 125, 125, 0.1);
            `;
-			case 'quality':
-				return `
+				case 'quality':
+					return `
              background-color: ${Theme.colors.infoTransparentColor};
              `;
-			case 'greenTransparent':
-				return `  
+				case 'greenTransparent':
+					return `  
              background: rgba(56, 199, 117, 0.1);`;
-			case 'warning':
-				return `
+				case 'warning':
+					return `
                background-color: ${Theme.colors.warningTransparentColor};
                `;
-			case 'pink':
-				return `
+				case 'pink':
+					return `
                  background-color: ${Theme.colors.pinkTransparent};
                  `;
-			default:
-				`
+				default:
+					`
         		background-color: ${Theme.colors.transparent};
    		 	`;
-		}
-	}}
+			}
+		}}
 	}
 
 	.details {
@@ -94,6 +94,4 @@ export const CardStyles = styled.div`
 			flex: 0 0 100%;
 		}
 	}
-
-
 `;

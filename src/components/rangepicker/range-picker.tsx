@@ -1,12 +1,12 @@
-import {DatePicker, TimeRangePickerProps} from 'antd';
-import {DatepickerStyle} from "../datepicker/datepicker.style";
+import { DatePicker, TimeRangePickerProps } from 'antd';
+import { DatepickerStyle } from '../datepicker/datepicker.style';
 
-const {RangePicker} = DatePicker;
+const { RangePicker } = DatePicker;
 
 const Rangepicker = (props: TimeRangePickerProps & { hiddenInput?: boolean }) => (
-    <DatepickerStyle hiddenInput={props.hiddenInput}>
-        <RangePicker {...props} />
-    </DatepickerStyle>
-)
+	<DatepickerStyle hiddenInput={props.hiddenInput}>
+		<RangePicker {...props} />
+	</DatepickerStyle>
+);
 
-export default Rangepicker
+export default Rangepicker;

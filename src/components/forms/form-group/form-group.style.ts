@@ -1,6 +1,6 @@
 import Styled from 'styled-components';
-import {Theme} from "../../../styles/_theme";
-import {FormGroupProps} from './form-group';
+import { Theme } from '../../../styles/_theme';
+import { FormGroupProps } from './form-group';
 
 export const FormGroupStyle = Styled.div`
    padding: 26px 32px;
@@ -10,20 +10,20 @@ export const FormGroupStyle = Styled.div`
    justify-content: flex-start;
 
    ${(props: Partial<FormGroupProps>) => {
-  switch (props.flexDirection) {
-    case "column":
-      return `
+			switch (props.flexDirection) {
+				case 'column':
+					return `
             flex-direction: column;
             align-items: stretch;
              `;
-    case 'row':
-    default:
-            `
+				case 'row':
+				default:
+					`
             flex-direction: row;
             align-items: flex-start;
             `;
-    }
-  }}
+			}
+		}}
 
    @media screen and (max-width: ${Theme.breakPoints.largePhone}px){
      padding: 16px;
@@ -71,15 +71,15 @@ export const FormGroupStyle = Styled.div`
 
 
    ${(props: Partial<FormGroupProps>) => {
-      switch (props.flexDirection) {
-        case "column":
-          return `
+			switch (props.flexDirection) {
+				case 'column':
+					return `
                 flex: 0 0 100%;
                  `;
-        default:
-          ``;
-      }
-    }}
+				default:
+					``;
+			}
+		}}
 
      @media screen and (max-width: ${Theme.breakPoints.desktop}px){
       flex: 0 0 100%;

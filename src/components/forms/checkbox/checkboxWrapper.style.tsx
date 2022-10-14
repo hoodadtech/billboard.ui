@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Theme} from "../../../styles/_theme";
+import { Theme } from '../../../styles/_theme';
 
 export interface CheckBoxProps {
 	variant: 'primary' | 'secondary' | 'warning' | 'suspended';
@@ -93,22 +93,22 @@ flex-direction: column;
     }
   }
   ${(props: CheckBoxProps) => {
-    switch (props.variant) {
-      case 'suspended':
-        return `
+		switch (props.variant) {
+			case 'suspended':
+				return `
           color: ${Theme.colors.gray_600};`;
-      case 'primary':
-        return `
+			case 'primary':
+				return `
           color: ${Theme.colors.primaryColor}`;
-      case 'warning':
-        return `
+			case 'warning':
+				return `
           color: ${Theme.colors.warningColor}`;
-      case 'secondary':
-        return `
+			case 'secondary':
+				return `
           color: ${Theme.colors.secondaryColor}`;
-      default:
-        return `
+			default:
+				return `
         color: ${Theme.colors.black}`;
-    }
-  }}
+		}
+	}}
 `;

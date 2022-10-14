@@ -1,5 +1,4 @@
-import {Theme} from "../../../styles/_theme";
-
+import { Theme } from '../../../styles/_theme';
 
 export interface CheckBoxProps {
 	variant: 'primary' | 'secondary' | 'warning' | 'suspended';
@@ -55,4 +54,3 @@ export const CheckboxStyle = `
     }
   }
 `;
-
