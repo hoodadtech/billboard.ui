@@ -1,2 +1,5 @@
+import Button from './components/button';
+import * as BillboardTypes from './types';
+
 export { GlobalStyle } from './styles/_global';
-export { default as Button } from './components/button';
+export { BillboardTypes, Button };
