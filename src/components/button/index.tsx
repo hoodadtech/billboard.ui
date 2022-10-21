@@ -30,7 +30,7 @@ const Button: React.FunctionComponent<CustomButtonProps> = props => {
 				</div>
 			)}
 			{props.text && <span className="text">{props.text}</span>}
-			{props.numFilter && <span className="numFilter">{props.numFilter}</span>}
+			{props.numFilter || props.numFilter === 0 ? <span className="numFilter">{props.numFilter}</span> : null}
 			{props.isDropDown && (
 				<div className="dropdown-icon">
 					<ArrowIcon />
