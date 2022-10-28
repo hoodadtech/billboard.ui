@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { RowLinkStyles } from './row-link.style';
-import { ArrowRight } from '../icons/ArrowRight';
+import { ArrowRight } from '../icons';
+import { ThemeContext } from '../theme-provider';
 
 export interface RowLinkProps {
 	title?: string;
@@ -10,8 +11,10 @@ export interface RowLinkProps {
 }
 
 export const RowLink = (props: RowLinkProps) => {
+	const theme = useContext(ThemeContext);
+
 	return (
-		<RowLinkStyles>
+		<RowLinkStyles theme={theme}>
 			<a className="link common-style" href={`${props.link}`}>
 				<div className="common-style">
 					{props.numberRow && <div className="number-row">{props.numberRow}</div>}

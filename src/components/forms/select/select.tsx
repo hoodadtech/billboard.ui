@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Field, FieldProps } from 'formik';
 import { Select, SelectProps } from 'antd';
 import { FormikInputProps } from '../control';
 import { SelectStyle } from './select.style';
 import { Label } from '../label/label';
 import { CustomErrorMessage } from '../error-message/error-message';
+import { ThemeContext } from '../../theme-provider';
 
 const { Option } = Select;
 
@@ -29,17 +30,21 @@ export const FormikSelect = ({
 	name,
 	errorMessage,
 	...rest
-}: SelectProps & FormikInputProps): React.ReactElement => (
-	<SelectStyle>
-		<Label label={label} htmlFor={name} />
-		<Field
-			name={name}
-			as={'select'}
-			component={_Select}
-			label={label}
-			{...rest}
-			className={`${rest.className || ''} ${errorMessage ? 'error' : ''}`}
-		/>
-		<CustomErrorMessage errorMessage={errorMessage} />
-	</SelectStyle>
-);
+}: SelectProps & FormikInputProps): React.ReactElement => {
+	const theme = useContext(ThemeContext);
+
+	return (
+		<SelectStyle theme={theme}>
+			<Label label={label} htmlFor={name} />
+			<Field
+				name={name}
+				as={'select'}
+				component={_Select}
+				label={label}
+				{...rest}
+				className={`${rest.className || ''} ${errorMessage ? 'error' : ''}`}
+			/>
+			<CustomErrorMessage errorMessage={errorMessage} />
+		</SelectStyle>
+	);
+};

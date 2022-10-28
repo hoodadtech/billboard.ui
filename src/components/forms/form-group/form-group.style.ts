@@ -1,6 +1,10 @@
 import Styled from 'styled-components';
-import { Theme } from '../../../styles/_theme';
+import { ThemeInterface } from '../../../styles/_theme';
 import { FormGroupProps } from './form-group';
+
+interface Props extends Partial<FormGroupProps> {
+	theme: ThemeInterface;
+}
 
 export const FormGroupStyle = Styled.div`
    padding: 26px 32px;
@@ -9,7 +13,7 @@ export const FormGroupStyle = Styled.div`
    position: relative;
    justify-content: flex-start;
 
-   ${(props: Partial<FormGroupProps>) => {
+   ${(props: Props) => {
 			switch (props.flexDirection) {
 				case 'column':
 					return `
@@ -25,7 +29,7 @@ export const FormGroupStyle = Styled.div`
 			}
 		}}
 
-   @media screen and (max-width: ${Theme.breakPoints.largePhone}px){
+   @media screen and (max-width: ${(props: Props) => props.theme.breakPoints.largePhone}px){
      padding: 16px;
    }
 
@@ -34,27 +38,27 @@ export const FormGroupStyle = Styled.div`
     flex: 2;
     min-width: 310px;
 
-    @media screen and (max-width: ${Theme.breakPoints.desktop}px){
+    @media screen and (max-width: ${(props: Props) => props.theme.breakPoints.desktop}px){
      flex: 0 0 100%;
     }
 
     &--title {
-     font-size: ${Theme.fontSize.xl};
-     color: ${Theme.colors.gray_700};
+     font-size: ${(props: Props) => props.theme.fontSize.xl};
+     color: ${(props: Props) => props.theme.colors.gray_700};
      margin-top: 4px;
      padding-right: 32px;
 
-     @media screen and (max-width: ${Theme.breakPoints.desktop}px){
+     @media screen and (max-width: ${(props: Props) => props.theme.breakPoints.desktop}px){
       padding-right: 16px;
      }
     }
 
     &--description {
-     font-size: ${Theme.fontSize.sm};
-     color: ${Theme.colors.gray_500};
+     font-size: ${(props: Props) => props.theme.fontSize.sm};
+     color: ${(props: Props) => props.theme.colors.gray_500};
      padding-right: 32px;
 
-     @media screen and (max-width: ${Theme.breakPoints.desktop}px){
+     @media screen and (max-width: ${(props: Props) => props.theme.breakPoints.desktop}px){
       padding-right: 16px;
      }
     }
@@ -70,7 +74,7 @@ export const FormGroupStyle = Styled.div`
      align-items:center;
 
 
-   ${(props: Partial<FormGroupProps>) => {
+   ${(props: Props) => {
 			switch (props.flexDirection) {
 				case 'column':
 					return `
@@ -81,15 +85,15 @@ export const FormGroupStyle = Styled.div`
 			}
 		}}
 
-     @media screen and (max-width: ${Theme.breakPoints.desktop}px){
+     @media screen and (max-width: ${(props: Props) => props.theme.breakPoints.desktop}px){
       flex: 0 0 100%;
      }
 
-     @media screen and (max-width: ${Theme.breakPoints.largeTablet}px){
+     @media screen and (max-width: ${(props: Props) => props.theme.breakPoints.largeTablet}px){
       gap: 4px 8px;
      }
 
-     @media screen and (max-width: ${Theme.breakPoints.largePhone}px){
+     @media screen and (max-width: ${(props: Props) => props.theme.breakPoints.largePhone}px){
         min-width: 100%;
         max-width: 100%;
      }

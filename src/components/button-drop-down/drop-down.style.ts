@@ -1,4 +1,4 @@
-import Styled, { StyledComponent } from 'styled-components';
+import Styled from 'styled-components';
 import { Dropdown } from 'antd';
 import { Theme } from '../../styles/_theme';
 

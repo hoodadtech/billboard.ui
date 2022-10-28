@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Upload, Modal } from 'antd';
 import { UploadChangeParam, UploadFile } from 'antd/lib/upload/interface';
 import { UploadStyle } from './upload.style';
+import { ThemeContext } from '../theme-provider';
 
 function getBase64(file: any) {
 	return new Promise((resolve, reject) => {
@@ -23,6 +24,7 @@ export interface CustomUploaderProps {
 }
 
 const CustomUploader = (props: CustomUploaderProps) => {
+	const theme = useContext(ThemeContext);
 	const [previewVisible, setPreviewVisible] = React.useState(false);
 	const [previewImage, setPreviewImage] = React.useState<any>('');
 	const [previewTitle, setPreviewTitle] = React.useState('');
@@ -64,7 +66,7 @@ const CustomUploader = (props: CustomUploaderProps) => {
 	};
 
 	return (
-		<UploadStyle>
+		<UploadStyle theme={theme}>
 			<Upload
 				listType="picture-card"
 				onPreview={handlePreview}

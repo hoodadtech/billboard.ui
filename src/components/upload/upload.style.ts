@@ -1,7 +1,11 @@
 import Styled from 'styled-components';
-import { Theme } from '../../styles/_theme';
+import { ThemeInterface } from '../../styles/_theme';
 
-export const UploadStyle = Styled.div`
+interface Props {
+	theme: ThemeInterface;
+}
+
+export const UploadStyle = Styled.div<Props>`
   .ant-upload-list-picture-card-container {
     width: 169px;
     height: 169px;
@@ -9,29 +13,29 @@ export const UploadStyle = Styled.div`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    
+
     .ant-upload-list-item {
      width: 100%;
      height: 100%;
      border-radius: 16px;
      overflow: hidden;
-     
+
      &.ant-upload-list-item-done {
       padding: 0;
      }
-     
+
      &-error {
-      border-color: ${Theme.colors.errorColor};
-      
+      border-color: ${(props: Props) => props.theme.colors.errorColor};
+
       .ant-upload-list-item-name {
-       color: ${Theme.colors.errorColor};
+       color: ${(props: Props) => props.theme.colors.errorColor};
       }
      }
-     
+
      &-thumbnail {
       color: #3EAEFF;
      }
-  
+
      .ant-progress-bg {
        background: #3EAEFF;
        height: 4px !important;
@@ -46,21 +50,21 @@ export const UploadStyle = Styled.div`
     width: 169px;
     height: 169px;
     border-radius: 16px;
-    
+
     &:hover {
-     border-color: ${Theme.colors.primaryColor};
+     border-color: ${(props: Props) => props.theme.colors.primaryColor};
     }
-    
+
     .ant-upload {
      color: #3EAEFF;
-     
+
      .title {
       font-weight: bold;
-      font-size: ${Theme.fontSize.sm}
+      font-size: ${(props: Props) => props.theme.fontSize.sm}
      }
-     
+
      .description {
-      font-size: ${Theme.fontSize.xs}
+      font-size: ${(props: Props) => props.theme.fontSize.xs}
      }
     }
    }

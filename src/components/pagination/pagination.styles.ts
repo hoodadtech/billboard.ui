@@ -1,8 +1,12 @@
 import styled from 'styled-components';
-import { Theme } from '../../styles/_theme';
+import { ThemeInterface } from '../../styles/_theme';
 import { CustomPaginationProps } from './pagination';
 
-export const PaginationStyle = styled.div`
+interface Props extends CustomPaginationProps {
+	theme: ThemeInterface;
+}
+
+export const PaginationStyle = styled.div<Props>`
 	display: flex;
 	position: relative;
 	width: calc(100% - 32px);
@@ -10,11 +14,11 @@ export const PaginationStyle = styled.div`
 	margin: 0 auto;
 	background: white;
 	padding: 16px 0;
-	border-top: 1px solid ${Theme.colors.borderDefaultColor};
+	border-top: 1px solid ${(props: Props) => props.theme.colors.borderDefaultColor};
 	:first-child {
 		justify-content: space-around;
 	}
-	${(props: CustomPaginationProps): string => {
+	${(props: Props): string => {
 		switch (props.justifyContent) {
 			case 'center':
 				return `
@@ -44,24 +48,24 @@ export const PaginationStyle = styled.div`
 			align-items: center;
 			border: none;
 
-			@media screen and (max-width: ${Theme.breakPoints.largePhone}px) {
+			@media screen and (max-width: ${(props: Props) => props.theme.breakPoints.largePhone}px) {
 				margin-top: 2rem;
 			}
 
 			a {
-				color: ${Theme.colors.gray_400};
+				color: ${(props: Props) => props.theme.colors.gray_400};
 			}
 
 			&-active {
-				background-color: ${Theme.colors.primaryColor};
+				background-color: ${(props: Props) => props.theme.colors.primaryColor};
 
 				a {
-					color: ${Theme.colors.white};
+					color: ${(props: Props) => props.theme.colors.white};
 				}
 			}
 
 			&:focus {
-				background-color: ${Theme.colors.primaryColor};
+				background-color: ${(props: Props) => props.theme.colors.primaryColor};
 
 				a {
 					color: #fff;
@@ -76,7 +80,7 @@ export const PaginationStyle = styled.div`
 		&-next {
 			position: absolute;
 			right: 0;
-			color: ${Theme.colors.gray_400};
+			color: ${(props: Props) => props.theme.colors.gray_400};
 
 			span {
 				margin: 0 4px !important;
@@ -86,7 +90,7 @@ export const PaginationStyle = styled.div`
 		&-prev {
 			position: absolute;
 			left: 0;
-			color: ${Theme.colors.gray_400};
+			color: ${(props: Props) => props.theme.colors.gray_400};
 
 			span {
 				transform: rotate(180deg);

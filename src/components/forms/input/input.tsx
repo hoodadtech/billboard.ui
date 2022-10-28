@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Field, FieldProps } from 'formik';
 import { Input } from 'antd';
 import { InputProps } from 'antd/es/input';
@@ -6,6 +6,7 @@ import { FormikInputProps } from '../control';
 import { InputStyle } from './input.style';
 import { Label } from '../label/label';
 import { CustomErrorMessage } from '../error-message/error-message';
+import { ThemeContext } from '../../theme-provider';
 
 export const _Input = ({ field, ...rest }: InputProps & FieldProps): React.ReactElement => {
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -24,6 +25,8 @@ export const FormikInput = ({
 	fullWidth,
 	...rest
 }: FormikInputProps & InputProps): React.ReactElement => {
+	const theme = useContext(ThemeContext);
+
 	const getSize = () => {
 		if (size) {
 			return size;
@@ -35,7 +38,7 @@ export const FormikInput = ({
 	};
 
 	return (
-		<InputStyle size={getSize()} fullWidth={fullWidth}>
+		<InputStyle theme={theme} size={getSize()} fullWidth={fullWidth}>
 			<Label label={label} htmlFor={name} />
 			<Field
 				name={name}

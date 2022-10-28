@@ -1,9 +1,9 @@
-import React from 'react';
-import Image from '../image';
+import React, { useContext } from 'react';
 import Pagination from 'antd/es/pagination';
 import { PaginationProps } from 'antd';
 import { PaginationStyle } from './pagination.styles';
 import { ArrowIcon } from '../icons';
+import { ThemeContext } from '../theme-provider';
 
 export interface CustomPaginationProps extends PaginationProps {
 	defaultCurrent?: number;
@@ -13,6 +13,8 @@ export interface CustomPaginationProps extends PaginationProps {
 }
 
 export const CustomPagination = ({ justifyContent = 'left', ...rest }: CustomPaginationProps): React.ReactElement => {
+	const theme = useContext(ThemeContext);
+
 	function itemRender(
 		page: number,
 		type: 'page' | 'prev' | 'next' | 'jump-prev' | 'jump-next',
@@ -38,7 +40,7 @@ export const CustomPagination = ({ justifyContent = 'left', ...rest }: CustomPag
 	}
 
 	return (
-		<PaginationStyle justifyContent={justifyContent}>
+		<PaginationStyle theme={theme} justifyContent={justifyContent}>
 			<Pagination {...rest} itemRender={itemRender} />
 		</PaginationStyle>
 	);

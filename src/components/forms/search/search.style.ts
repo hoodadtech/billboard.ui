@@ -1,13 +1,14 @@
 import Styled from 'styled-components';
 import { SizeType } from 'antd/es/config-provider/SizeContext';
-import { Theme } from '../../../styles/_theme';
+import { ThemeInterface } from '../../../styles/_theme';
 
 interface SearchProps {
 	size?: SizeType;
+	theme: ThemeInterface;
 }
 
-export const SearchStyle = Styled.div`
-   @media screen and (max-width: ${Theme.breakPoints.smallPhone}px){
+export const SearchStyle = Styled.div<SearchProps>`
+   @media screen and (max-width: ${(props: SearchProps) => props.theme.breakPoints.smallPhone}px){
     width: 100%;
    }
 
@@ -15,71 +16,71 @@ export const SearchStyle = Styled.div`
     &-group-addon {
      display: none;
     }
-    
+
     &-prefix {
      margin-right: 8px;
     }
-   } 
-   
+   }
+
    .ant-input-wrapper , .ant-input-password{
-    color: ${Theme.colors.gray_900};
+    color: ${(props: SearchProps) => props.theme.colors.gray_900};
     width: 371px;
     max-width: 100%;
     height: 48px;
     border-radius: 12px !important;
-    border: 1px solid ${Theme.colors.borderDefaultColor};
+    border: 1px solid ${(props: SearchProps) => props.theme.colors.borderDefaultColor};
     box-sizing: border-box;
-    
-    @media screen and (max-width: ${Theme.breakPoints.largeTablet}px) {
+
+    @media screen and (max-width: ${(props: SearchProps) => props.theme.breakPoints.largeTablet}px) {
      width: 310px;
     }
-    
-    @media screen and (max-width: ${Theme.breakPoints.smallPhone}px){
+
+    @media screen and (max-width: ${(props: SearchProps) => props.theme.breakPoints.smallPhone}px){
      width: 100%;
     }
-    
+
     &:focus, &:hover {
-     border: 1px solid ${Theme.colors.secondaryColor};
+     border: 1px solid ${(props: SearchProps) => props.theme.colors.secondaryColor};
     }
-    
+
     &:focus{
-     box-shadow: 0 0 0 2px ${Theme.colors.secondaryTransparentColor}
+     box-shadow: 0 0 0 2px ${(props: SearchProps) => props.theme.colors.secondaryTransparentColor}
     }
-   
+
     &.error {
-     color: ${Theme.colors.errorColor};
-     border: 1px solid ${Theme.colors.errorColor};
-     
+     color: ${(props: SearchProps) => props.theme.colors.errorColor};
+     border: 1px solid ${(props: SearchProps) => props.theme.colors.errorColor};
+
      &:focus {
-      box-shadow: 0 0 0 2px ${Theme.colors.errorTransparentColor}
+      box-shadow: 0 0 0 2px ${(props: SearchProps) => props.theme.colors.errorTransparentColor}
      }
     }
-   
+
     &.success {
-     color: ${Theme.colors.successColor};
-     border: 1px solid ${Theme.colors.successColor};
-     box-shadow: 0 0 0 2px ${Theme.colors.successTransparentColor}
-     
+     color: ${(props: SearchProps) => props.theme.colors.successColor};
+     border: 1px solid ${(props: SearchProps) => props.theme.colors.successColor};
+     box-shadow: 0 0 0 2px ${(props: SearchProps) => props.theme.colors.successTransparentColor}
+
      &:focus {
-      box-shadow: 0 0 0 2px ${Theme.colors.successTransparentColor}
+      box-shadow: 0 0 0 2px ${(props: SearchProps) => props.theme.colors.successTransparentColor}
      }
     }
-    
+
     &:disabled {
-     background-color: ${Theme.colors.gray_100};
-     color: ${Theme.colors.gray_900};
+     background-color: ${(props: SearchProps) => props.theme.colors.gray_100};
+     color: ${(props: SearchProps) => props.theme.colors.gray_900};
     }
-    
+
     .ant-input-affix-wrapper {
       height: 100%;
       border-radius: 12px !important;
       border: 0;
-    
+
       &-focused{
-       box-shadow: 0 0 0 2px ${Theme.colors.secondaryTransparentColor}
+       box-shadow: 0 0 0 2px ${(props: SearchProps) => props.theme.colors.secondaryTransparentColor}
       }
     }
-    
+
     ${(props: SearchProps) => {
 			switch (props.size) {
 				case 'small':
@@ -90,12 +91,12 @@ export const SearchStyle = Styled.div`
 					return ``;
 			}
 		}};
-      
-    @media screen and (max-width: ${Theme.breakPoints.normalPhone}px) {
+
+    @media screen and (max-width: ${(props: SearchProps) => props.theme.breakPoints.normalPhone}px) {
      height: 44px;
     }
    }
-   
+
    &.password {
     .login-inputs {
       width: 300px !important;
@@ -103,10 +104,10 @@ export const SearchStyle = Styled.div`
       display: flex;
       height: 48px;
       border-radius: 12px !important;
-      border: 1px solid ${Theme.colors.borderDefaultColor};
+      border: 1px solid ${(props: SearchProps) => props.theme.colors.borderDefaultColor};
       box-sizing: border-box;
-      
-      input { 
+
+      input {
        text-align: center;
       }
     }

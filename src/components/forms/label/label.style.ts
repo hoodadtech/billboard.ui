@@ -1,5 +1,9 @@
 import Styled from 'styled-components';
-import { Theme } from '../../../styles/_theme';
+import { ThemeInterface } from '../../../styles/_theme';
+
+interface Props {
+	theme: ThemeInterface;
+}
 
 export const LabelStyle = Styled.div`
    width: 100%;
@@ -7,13 +11,13 @@ export const LabelStyle = Styled.div`
    padding-left: 16px;
    display: flex;
    align-items: center;
-   justify-content: flex-start; 
+   justify-content: flex-start;
 
    label {
-    color: ${Theme.colors.gray_800};
+    color: ${(props: Props) => props.theme.colors.gray_800};
     font-style: normal;
     font-weight: 300;
-    font-size: ${Theme.fontSize.sm};
+    font-size: ${(props: Props) => props.theme.fontSize.sm};
     line-height: 20px;
    }
 `;

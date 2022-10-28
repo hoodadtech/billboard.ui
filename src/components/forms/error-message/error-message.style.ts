@@ -1,5 +1,9 @@
 import Styled from 'styled-components';
-import { Theme } from '../../../styles/_theme';
+import { ThemeInterface } from '../../../styles/_theme';
+
+interface Props {
+	theme: ThemeInterface;
+}
 
 export const ErrorMessageStyle = Styled.div`
    width: 100%;
@@ -8,10 +12,10 @@ export const ErrorMessageStyle = Styled.div`
    padding-left: 16px;
    display: flex;
    align-items: center;
-   justify-content: flex-start; 
-   color: ${Theme.colors.errorColor};
+   justify-content: flex-start;
+   color: ${(props: Props) => props.theme.colors.errorColor};
    font-weight: 300;
-   font-size: ${Theme.fontSize.sm};
+   font-size: ${(props: Props) => props.theme.fontSize.sm};
    line-height: 18px;
    font-style: normal;
 `;

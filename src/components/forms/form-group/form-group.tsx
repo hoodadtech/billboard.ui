@@ -1,5 +1,6 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useContext } from 'react';
 import { FormGroupStyle } from './form-group.style';
+import { ThemeContext } from '../../theme-provider';
 
 export interface FormGroupProps {
 	title?: string;
@@ -16,8 +17,9 @@ export const FormGroup = ({
 	style,
 	flexDirection,
 }: FormGroupProps): React.ReactElement | null => {
+	const theme = useContext(ThemeContext);
 	return (
-		<FormGroupStyle style={style} flexDirection={flexDirection}>
+		<FormGroupStyle theme={theme} style={style} flexDirection={flexDirection}>
 			{title && (
 				<div className="form-group">
 					<div className="form-group--title">{title}</div>

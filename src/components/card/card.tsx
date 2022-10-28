@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from '../image';
+import React, { useContext } from 'react';
 import { CardStyles } from './card.styles';
+import { ThemeContext } from '../theme-provider';
 
 export interface CardProps {
 	icon?: React.ReactNode;
@@ -19,12 +19,16 @@ export interface CardProps {
 		| undefined;
 }
 
-export const Card = (props: CardProps): React.ReactElement => (
-	<CardStyles variant={props.variant} className="card">
-		{props.icon && <div className="icon">{props.icon}</div>}
-		<div className="details">
-			<div className="title">{props.title}</div>
-			{props.description && <div className="description">{props.description}</div>}
-		</div>
-	</CardStyles>
-);
+export const Card = (props: CardProps): React.ReactElement => {
+	const theme = useContext(ThemeContext);
+
+	return (
+		<CardStyles theme={theme} variant={props.variant} className="card">
+			{props.icon && <div className="icon">{props.icon}</div>}
+			<div className="details">
+				<div className="title">{props.title}</div>
+				{props.description && <div className="description">{props.description}</div>}
+			</div>
+		</CardStyles>
+	);
+};

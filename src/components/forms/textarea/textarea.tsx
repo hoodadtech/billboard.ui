@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Field, FieldProps } from 'formik';
 import { Input } from 'antd';
 import { TextAreaProps } from 'antd/es/input';
@@ -6,6 +6,7 @@ import { FormikInputProps } from '../control';
 import { TextareaStyle } from './textarea.style';
 import { Label } from '../label/label';
 import { CustomErrorMessage } from '../error-message/error-message';
+import { ThemeContext } from '../../theme-provider';
 
 const { TextArea } = Input;
 
@@ -22,10 +23,14 @@ export const FormikTextarea = ({
 	name,
 	errorMessage,
 	...rest
-}: TextAreaProps & FormikInputProps): React.ReactElement => (
-	<TextareaStyle>
-		<Label label={label} htmlFor={name} />
-		<Field name={name} as={'textarea'} component={_TextArea} label={label} {...rest} />
-		<CustomErrorMessage errorMessage={errorMessage} />
-	</TextareaStyle>
-);
+}: TextAreaProps & FormikInputProps): React.ReactElement => {
+	const theme = useContext(ThemeContext);
+
+	return (
+		<TextareaStyle theme={theme}>
+			<Label label={label} htmlFor={name} />
+			<Field name={name} as={'textarea'} component={_TextArea} label={label} {...rest} />
+			<CustomErrorMessage errorMessage={errorMessage} />
+		</TextareaStyle>
+	);
+};

@@ -1,5 +1,5 @@
 import Styled from 'styled-components';
-import { Theme } from '../../styles/_theme';
+import { Theme, ThemeInterface } from '../../styles/_theme';
 import { DatePicker } from 'antd';
 
 interface DatePickerStyleProps {
@@ -118,37 +118,41 @@ export const DatepickerDropdownGlobalStyle = `
  }
 `;
 
+interface Props extends DatePickerStyleProps {
+	theme: ThemeInterface;
+}
+
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 export const DatepickerStyle = Styled(DatePicker)`
    width: 371px;
    max-width: 100%;
    height: 48px;
-   background: ${Theme.colors.white};
+   background: ${(props: Props) => props.theme.colors.white};
    box-sizing: border-box;
-   border: 1px solid ${Theme.colors.borderDefaultColor};
+   border: 1px solid ${(props: Props) => props.theme.colors.borderDefaultColor};
    border-radius: 12px;
-   display: ${(props: DatePickerStyleProps) => (props.hiddenInput ? 'none' : 'inline-flex')};
+   display: ${(props: Props) => (props.hiddenInput ? 'none' : 'inline-flex')};
    &.with-button {
      width: 315px;
    }
 
-   @media screen and (max-width: ${Theme.breakPoints.normalPhone}px) {
+   @media screen and (max-width: ${(props: Props) => props.theme.breakPoints.normalPhone}px) {
      height: 44px;
    }
 
    &:focus, &:active, &.ant-picker-focused {
-     border: 1px solid ${Theme.colors.secondaryColor};
-     box-shadow: 0 0 0 2px ${Theme.colors.secondaryTransparentColor}
+     border: 1px solid ${(props: Props) => props.theme.colors.secondaryColor};
+     box-shadow: 0 0 0 2px ${(props: Props) => props.theme.colors.secondaryTransparentColor}
    }
 
    &.error {
-     border: 1px solid ${Theme.colors.errorColor};
+     border: 1px solid ${(props: Props) => props.theme.colors.errorColor};
    }
 
    &.green-value {
     .ant-picker-input > input {
-       color: ${Theme.colors.successColor};
+       color: ${(props: Props) => props.theme.colors.successColor};
     }
    }
 

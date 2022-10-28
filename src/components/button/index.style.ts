@@ -1,44 +1,48 @@
 import Styled from 'styled-components';
-import { Theme } from '../../styles/_theme';
+import { ThemeInterface } from '../../styles/_theme';
 import { CustomButtonProps } from './types';
+
+interface Props extends CustomButtonProps {
+	theme: ThemeInterface;
+}
 
 export const ButtonStyle = Styled.button`
     display:inline-flex;
     height: 48px;
     border-radius: 10px;
-    padding: ${(props: CustomButtonProps) => (props.text ? '3px 20px' : '3px 14px')};
-    direction: ${(props: CustomButtonProps) => props.direction || 'unset'};
+    padding: ${(props: Props) => (props.text ? '3px 20px' : '3px 14px')};
+    direction: ${(props: Props) => props.direction || 'unset'};
     display: flex;
     flex-direction: row;
     justify-content: center;
     color:white;
     align-items: center;
     border: none;
-    background-color:${Theme.colors.primaryColor} ;
+    background-color:${(props: Props) => props.theme.colors.primaryColor} ;
     cursor:pointer;
     font-weight: 600;
     justify-content: space-around;
     transition: all 200ms ease-in-out;
 
     .left-icon {
-      display: ${(props: CustomButtonProps) => (props.isMobileIcon ? 'none' : 'flex')};
+      display: ${(props: Props) => (props.isMobileIcon ? 'none' : 'flex')};
       transition: all 200ms ease-in-out;
 
-      @media screen and (max-width: ${Theme.breakPoints.largePhone}px){
+      @media screen and (max-width: ${(props: Props) => props.theme.breakPoints.largePhone}px){
         display: flex;
       }
     }
 
     .dropdown-icon {
-      display: ${(props: CustomButtonProps) => (props.text ? 'flex' : 'none')};
+      display: ${(props: Props) => (props.text ? 'flex' : 'none')};
     }
 
     .text {
      display: inline-flex;
-     margin: ${(props: CustomButtonProps) => (props.icon ? '0 10px 0 5px' : '0 5px')};
+     margin: ${(props: Props) => (props.icon ? '0 10px 0 5px' : '0 5px')};
 
-     @media screen and (max-width: ${Theme.breakPoints.largePhone}px){
-       display: ${(props: CustomButtonProps) => (props.isDesktopText ? 'none' : 'inline-flex')};
+     @media screen and (max-width: ${(props: Props) => props.theme.breakPoints.largePhone}px){
+       display: ${(props: Props) => (props.isDesktopText ? 'none' : 'inline-flex')};
      }
     }
 
@@ -51,39 +55,39 @@ export const ButtonStyle = Styled.button`
         opacity: 40%;
     }
 
-  ${(props: CustomButtonProps) => {
+  ${(props: Props) => {
 		switch (props.variant) {
 			case 'successBold':
 				return `
-            background-color: ${Theme.colors.successColor};
-            color:${Theme.colors.white};
+            background-color: ${props.theme.colors.successColor};
+            color:${props.theme.colors.white};
             `;
 			case 'success':
 				return `
-            background-color: ${Theme.colors.successTransparentColor};
-            color:${Theme.colors.successColor};
+            background-color: ${props.theme.colors.successTransparentColor};
+            color:${props.theme.colors.successColor};
 
             &:hover,&:focus {
-                background:${Theme.colors.successColorHover};
+                background:${props.theme.colors.successColorHover};
             };
                 `;
 			case 'primary':
 				return `
             color:white;
-            background-color:${Theme.colors.primaryColor};
+            background-color:${props.theme.colors.primaryColor};
 
             &:hover {
-                background:${Theme.colors.primaryColorHover};
+                background:${props.theme.colors.primaryColorHover};
             };
 
             &:focus{
-                background-color:${Theme.colors.primaryColorPress};
+                background-color:${props.theme.colors.primaryColorPress};
             }
                 `;
 			case 'secondary':
 				return `
-            background-color: ${Theme.colors.primaryColorTransparent};
-            color:${Theme.colors.primaryColorHover};
+            background-color: ${props.theme.colors.primaryColorTransparent};
+            color:${props.theme.colors.primaryColorHover};
 
             &:hover {
                 background:#2D2E831A;
@@ -91,26 +95,26 @@ export const ButtonStyle = Styled.button`
             };
 
             &:focus{
-                background-color:${Theme.colors.primaryColorButtonFocus};
+                background-color:${props.theme.colors.primaryColorButtonFocus};
             }
              `;
 			case 'leased':
 				return `
-            background-color: ${Theme.colors.secondaryColor};
-            color:${Theme.colors.white};
+            background-color: ${props.theme.colors.secondaryColor};
+            color:${props.theme.colors.white};
 
             &:hover {
-                background-color: ${Theme.colors.secondaryColorHover};
+                background-color: ${props.theme.colors.secondaryColorHover};
             };
 
             &:focus{
-                background-color:${Theme.colors.secondaryColorPress};
+                background-color:${props.theme.colors.secondaryColorPress};
             }
              `;
 			case 'error':
 				return `
-            background-color: ${Theme.colors.errorTransparentColor};
-            color:${Theme.colors.errorColor};
+            background-color: ${props.theme.colors.errorTransparentColor};
+            color:${props.theme.colors.errorColor};
 
             &:hover, &:focus {
                 box-shadow: 0px 0px 10px rgba(254, 80, 80, 0.3);
@@ -119,37 +123,37 @@ export const ButtonStyle = Styled.button`
 			case 'tertiary':
 				return `
             background-color:white;
-            border:1px solid ${Theme.colors.primaryColor};
-            color:${Theme.colors.primaryColor};
+            border:1px solid ${props.theme.colors.primaryColor};
+            color:${props.theme.colors.primaryColor};
 
             &:hover{
-                 color:${Theme.colors.primaryColorHover};
-                 border:1px solid:${Theme.colors.primaryColorHover};
+                 color:${props.theme.colors.primaryColorHover};
+                 border:1px solid:${props.theme.colors.primaryColorHover};
             };
 
             &:focus{
-                color:${Theme.colors.primaryColorPress};
-                border:1px solid:${Theme.colors.primaryColorPress};
+                color:${props.theme.colors.primaryColorPress};
+                border:1px solid:${props.theme.colors.primaryColorPress};
                 background-color:rgba(45, 46, 131, 0.1);
             } `;
 			case 'textLine':
 				return `
            	  border:none;
           	  background-color:white;
-          	  color:${Theme.colors.primaryColor};
+          	  color:${props.theme.colors.primaryColor};
 
           	  &:hover{
-                color:${Theme.colors.primaryColorHover};
+                color:${props.theme.colors.primaryColorHover};
           	  };
 
           	  &:focus{
-                color:${Theme.colors.primaryColorPress};
+                color:${props.theme.colors.primaryColorPress};
           	  }
             } `;
 			case 'lightBlue':
 				return `
-                border:1px solid ${Theme.colors.lightBlue};
-                color:${Theme.colors.lightBlue};
+                border:1px solid ${props.theme.colors.lightBlue};
+                color:${props.theme.colors.lightBlue};
                 background-color:white;
                 `;
 
@@ -157,30 +161,30 @@ export const ButtonStyle = Styled.button`
 				return `
            	  border:none;
           	  background-color:transparent;
-          	  color:${Theme.colors.primaryColor};
+          	  color:${props.theme.colors.primaryColor};
 
           	  &:hover{
-                color:${Theme.colors.primaryColorHover};
+                color:${props.theme.colors.primaryColorHover};
           	  };
 
           	  &:focus{
-                color:${Theme.colors.primaryColorPress};
+                color:${props.theme.colors.primaryColorPress};
           	  }
             `;
 			case 'gray':
 				return `
            	  border:none;
-          	  background-color: ${Theme.colors.gray};
-          	  color:${Theme.colors.white};
+          	  background-color: ${props.theme.colors.gray};
+          	  color:${props.theme.colors.white};
             `;
 			default:
 				`
-        		background-color: ${Theme.colors.primaryColor};
+        		background-color: ${props.theme.colors.primaryColor};
    		 	`;
 		}
 	}}
 
-  ${(props: CustomButtonProps) => {
+  ${(props: Props) => {
 		switch (props.size) {
 			case 'small':
 				return `
@@ -210,7 +214,7 @@ export const ButtonStyle = Styled.button`
    opacity: 0.5;
   }
 
-  ${(props: CustomButtonProps) => {
+  ${(props: Props) => {
 		return `
      opacity: ${props.loading ? '0.5' : '1'};
     `;

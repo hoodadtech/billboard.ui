@@ -1,8 +1,12 @@
 import Styled from 'styled-components';
-import { Theme } from 'src/styles/_theme';
+import { ThemeInterface } from 'src/styles/_theme';
 import { TagProps } from './tag';
 
-export const TagStyle = Styled.div`
+interface Props extends TagProps {
+	theme: ThemeInterface;
+}
+
+export const TagStyle = Styled.div<Props>`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,63 +15,63 @@ export const TagStyle = Styled.div`
     width: max-content;
 	padding: 8px 16px;
 	margin: 0;
-    font-size: ${Theme.fontSize.sm};
+    font-size: ${(props: Props) => props.theme.fontSize.sm};
 
-    ${(props: TagProps) => {
+    ${(props: Props) => {
 			switch (props.status) {
 				case 'warning':
 					return `
-					background-color: ${Theme.colors.warningTransparentColor};
-					color: ${Theme.colors.warningColor}`;
+					background-color: ${props.theme.colors.warningTransparentColor};
+					color: ${props.theme.colors.warningColor}`;
 				case 'active':
 					return `
-					background-color: ${Theme.colors.infoTransparentColor}; 
-					color: ${Theme.colors.infoColor};`;
+					background-color: ${props.theme.colors.infoTransparentColor};
+					color: ${props.theme.colors.infoColor};`;
 				case 'success':
 					return `
-					background-color: ${Theme.colors.successTransparentColor}; 
-					color: ${Theme.colors.successColor};`;
+					background-color: ${props.theme.colors.successTransparentColor};
+					color: ${props.theme.colors.successColor};`;
 				case 'successBold':
 					return `
-					background-color: ${Theme.colors.successColor}; 
-					color: ${Theme.colors.white};`;
+					background-color: ${props.theme.colors.successColor};
+					color: ${props.theme.colors.white};`;
 				case 'error':
 					return `
-					background-color: ${Theme.colors.errorTransparentColor}; 
-					color: ${Theme.colors.errorColor}`;
+					background-color: ${props.theme.colors.errorTransparentColor};
+					color: ${props.theme.colors.errorColor}`;
 				case 'suspended':
 					return `
-					background-color: ${Theme.colors.gray_100};
-					color: ${Theme.colors.gray_500};`;
+					background-color: ${props.theme.colors.gray_100};
+					color: ${props.theme.colors.gray_500};`;
 				case 'primary':
 					return `
-                     background-color: ${Theme.colors.primaryColorTransparent};
-                     color: ${Theme.colors.primaryColor};`;
+                     background-color: ${props.theme.colors.primaryColorTransparent};
+                     color: ${props.theme.colors.primaryColor};`;
 
 				case 'secondary':
 				case 'leased':
 					return `
-                    background-color: ${Theme.colors.secondaryTransparentColor};
-                    color: ${Theme.colors.secondaryColor};`;
+                    background-color: ${props.theme.colors.secondaryTransparentColor};
+                    color: ${props.theme.colors.secondaryColor};`;
 
 				case 'gray':
 					return `
-          	        background-color: ${Theme.colors.gray_100};
-                    color: ${Theme.colors.gray};`;
+          	        background-color: ${props.theme.colors.gray_100};
+                    color: ${props.theme.colors.gray};`;
 				default:
 					return `
-					background-color: ${Theme.colors.secondaryTransparentColor}; 
-					color: ${Theme.colors.secondaryColor};`;
+					background-color: ${props.theme.colors.secondaryTransparentColor};
+					color: ${props.theme.colors.secondaryColor};`;
 			}
 		}}
-         
-    ${(props: TagProps) => {
+
+    ${(props: Props) => {
 			switch (props.size) {
 				case 'small':
 					return `
                 padding: 3px 12px;
                 height: 26px;
-                font-size: ${Theme.fontSize.xs};
+                font-size: ${props.theme.fontSize.xs};
                 border-radius: 5px;
 			`;
 				default:
