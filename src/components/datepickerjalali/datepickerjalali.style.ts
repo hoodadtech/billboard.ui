@@ -2,7 +2,7 @@ import Styled from 'styled-components';
 import { Theme } from '../../styles/_theme';
 
 interface JalaliDatePickerStyleProps {
-   hiddenInput?: boolean
+	hiddenInput?: boolean;
 }
 
 export const JalaliDatePickerStyle = Styled.div`
@@ -11,7 +11,7 @@ export const JalaliDatePickerStyle = Styled.div`
       max-width: 100%;
       height: 48px;
       box-sizing: border-box;
-      display: ${(props: JalaliDatePickerStyleProps) => props.hiddenInput ? "none" : "inline-flex"};
+      display: ${(props: JalaliDatePickerStyleProps) => (props.hiddenInput ? 'none' : 'inline-flex')};
 
       input{
          width:100%;
