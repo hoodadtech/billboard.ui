@@ -4,18 +4,11 @@ import { Moment } from 'moment';
 import { useState } from 'react';
 import { JalaliDatePickerStyle } from '../datepickerjalali/datepickerjalali.style';
 import { Theme } from '../../styles/_theme';
+import { RangePickerJalaliProps } from './types';
 
 const momentJalali = require('moment-jalaali');
 
-export interface DatePickerJalaliProps {
-	name?: string;
-	className?: string;
-	initialValue?: [Moment, Moment];
-	onChange?: (value: [string, string]) => void;
-	locale?: string;
-}
-
-const RangePicker = (props: DatePickerJalaliProps) => {
+const JalaliRangePicker = (props: RangePickerJalaliProps) => {
 	const handleParseInitalDate = (value: Moment) => {
 		const jalaliDate = momentJalali(value).format('jYYYY/jM/jD')?.split('/');
 
@@ -62,4 +55,4 @@ const RangePicker = (props: DatePickerJalaliProps) => {
 	);
 };
 
-export default RangePicker;
+export default JalaliRangePicker;
