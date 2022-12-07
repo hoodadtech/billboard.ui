@@ -36,7 +36,7 @@ const JalaliRangePicker = (props: RangePickerJalaliProps) => {
 	};
 
 	return (
-		<JalaliDatePickerStyle>
+		<JalaliDatePickerStyle bordered={props.bordered}>
 			<DatePickerJalali
 				wrapperClassName={`${props.className}`}
 				value={dayRange}

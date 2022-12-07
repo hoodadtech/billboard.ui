@@ -6,4 +6,5 @@ export interface RangePickerJalaliProps {
 	initialValue?: [Moment, Moment];
 	onChange?: (value: [string, string]) => void;
 	locale?: string;
+	bordered?:boolean;
 }

@@ -6,4 +6,5 @@ export interface DatePickerJalaliProps {
 	initialDate?: Moment;
 	onChange?: (value: Moment) => void;
 	locale?: string;
+	bordered?:boolean;
 }

@@ -25,7 +25,7 @@ const JalaliDatePicker = (props: DatePickerJalaliProps) => {
 	};
 
 	return (
-		<JalaliDatePickerStyle>
+		<JalaliDatePickerStyle  bordered={props.bordered}>
 			<DatePickerJalali
 				wrapperClassName={`${props.className}`}
 				value={Date}
